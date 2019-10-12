@@ -54,10 +54,10 @@ class Playfair(keyword: String) {
         }
     }
 
-    fun printTable() {
+    fun tableToString() = buildString {
         for (i in 0..4) {
-            for (j in 0..4) print(table[i][j] + "\t")
-            println()
+            for (j in 0..4) append(table[i][j] + "\t")
+            appendln()
         }
     }
 

@@ -1,3 +1,5 @@
+import java.io.File
+
 object Menu {
     fun init() {
         println(
@@ -19,7 +21,7 @@ object Menu {
         val keyword = readLine()!!
         val playfair = Playfair(keyword)
         println("\nPlayfair table:")
-        playfair.printTable()
+        print(playfair.tableToString())
 
         println("\nEnter plaintext:")
         val plainText = readLine()!!
@@ -32,6 +34,24 @@ object Menu {
     }
 
     private fun fileIo() {
+        val inputFile = File("input.txt")
+        val outputFile = File("output.txt")
+        check(inputFile.exists()) { "Input file doesn't exist." }
+        check(outputFile.exists()) { "Output file doesn't exist." }
 
+        val lines = inputFile.readLines()
+        val playfair = Playfair(lines.first())
+
+        val encodedText = playfair.encode(lines[1])
+        val decodedText = playfair.decode(encodedText)
+
+        val output = buildString {
+            appendln("Playfair table:")
+            appendln(playfair.tableToString())
+            appendln("Encoded text: $encodedText")
+            appendln("Decoded text: $decodedText")
+        }
+
+        outputFile.writeText(output)
     }
 }
