@@ -1,5 +1,7 @@
 class Playfair(keyword: String) {
     companion object {
+        const val REGEX_PATTERN = "[A-Za-z0-9 _.,!\"'$&;:?@-]*"
+
         val alphabet = ('A'..'Z') - 'J'
 
         private fun String.playfairFormat() = this.filter { it.isLetter() }
@@ -8,7 +10,7 @@ class Playfair(keyword: String) {
     }
 
     init {
-        require(keyword.matches(Regex("[A-Za-z0-9 _.,!\"'\$&;?@]*"))) {
+        require(keyword.matches(Regex(REGEX_PATTERN))) {
             "Keyword must consist of letters A-Z and/or special characters."
         }
     }
@@ -17,7 +19,7 @@ class Playfair(keyword: String) {
     private val formattedKeyword = keyword.playfairFormat()
 
     fun encode(plainText: String): String {
-        require(plainText.matches(Regex("[A-Za-z0-9 _.,!\"'$&;?@]*"))) {
+        require(plainText.matches(Regex(REGEX_PATTERN))) {
             "Plaintext must consist of letters A-Z and/or special characters."
         }
 
@@ -26,7 +28,7 @@ class Playfair(keyword: String) {
             val (row2, col2) = indexOfChar(second)
             acc + when {
                 row1 == row2 ->
-                    "${table[row1][(col1 + 1) % 5]}" + "${table[row2][(col2 + 5) % 1]}"
+                    "${table[row1][(col1 + 1) % 5]}" + "${table[row2][(col2 + 1) % 5]}"
 
                 col1 == col2 ->
                     "${table[(row1 + 1) % 5][col1]}" + "${table[(row2 + 1) % 5][col2]}"
@@ -84,7 +86,7 @@ class Playfair(keyword: String) {
         }.chunked(2).map { it.first() to it.last() }
     }
 
-    data class Index(val row: Int, val column: Int)
+    private data class Index(val row: Int, val column: Int)
 
     private fun indexOfChar(c: Char): Index {
         for (i in 0..4)
