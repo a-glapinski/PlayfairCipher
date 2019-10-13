@@ -1,19 +1,24 @@
 import java.io.File
 
 object Menu {
-    fun init() {
+    tailrec fun init() {
         println(
-            """Choose IO:
+            """
+            |Choose option:
             | 1. Read from/print to console
             | 2. Read from/save to file
+            | 3. Exit program
         """.trimMargin()
         )
 
         when (readLine()!!.toIntOrNull()) {
             1 -> consoleIo()
             2 -> fileIo()
-            else -> println("Invalid option\n").also { init() }
+            3 -> return
+            else -> println("Invalid option\n")
         }
+
+        init()
     }
 
     private fun consoleIo() {
