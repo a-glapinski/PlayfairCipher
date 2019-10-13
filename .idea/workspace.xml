@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a41cac61-eaa2-4d18-97b9-6561496a6644" name="Default Changelist" comment="Improvements">
+    <list default="true" id="a41cac61-eaa2-4d18-97b9-6561496a6644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Menu.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +81,8 @@
       <workItem from="1570913296343" duration="2036000" />
       <workItem from="1570915408869" duration="1243000" />
       <workItem from="1570957193792" duration="4530000" />
-      <workItem from="1570963768382" duration="1048000" />
+      <workItem from="1570963768382" duration="1977000" />
+      <workItem from="1570980760910" duration="238000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <created>1570915531461</created>
@@ -103,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570964013522</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Improvements">
+      <created>1570966048040</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570966048040</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,8 +133,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixes" />
-    <MESSAGE value="Improvements" />
     <MESSAGE value="Improve menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve menu" />
+    <MESSAGE value="Improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improvements" />
   </component>
 </project>

@@ -47,7 +47,8 @@ object Menu {
         check(inputFile.exists()) { "Input file doesn't exist." }
         check(outputFile.exists()) { "Output file doesn't exist." }
 
-        val (keyword, plainText) = inputFile.readLines()
+        val keyword = inputFile.readLines().getOrElse(0) { "" }
+        val plainText = inputFile.readLines().getOrElse(1) { "" }
         val playfair = Playfair(keyword)
 
         val encodedText = playfair.encode(plainText)
@@ -61,6 +62,7 @@ object Menu {
         }
 
         outputFile.writeText(output)
+        println("\nOutput was saved to file.\n")
     }
 }
 
