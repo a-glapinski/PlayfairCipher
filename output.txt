@@ -5,5 +5,5 @@ T	U	V	W	X
 Y	Z	B	C	D	
 E	F	G	H	I	
 
-Encoded text: NKCLSUUN
-Decoded text: MADONXNA
+Encoded text: NK CL SU UN
+Decoded text: MA DO NX NA

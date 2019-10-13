@@ -29,8 +29,8 @@ object Menu {
         val encodedText = playfair.encode(plainText)
         val decodedText = playfair.decode(encodedText)
 
-        println("\nEncoded text:\n$encodedText")
-        println("\nDecoded text:\n$decodedText")
+        println("\nEncoded text:\n${encodedText.spaceEverySecondLetter()}")
+        println("\nDecoded text:\n${decodedText.spaceEverySecondLetter()}")
     }
 
     private fun fileIo() {
@@ -39,19 +39,21 @@ object Menu {
         check(inputFile.exists()) { "Input file doesn't exist." }
         check(outputFile.exists()) { "Output file doesn't exist." }
 
-        val lines = inputFile.readLines()
-        val playfair = Playfair(lines.first())
+        val (keyword, plainText) = inputFile.readLines()
+        val playfair = Playfair(keyword)
 
-        val encodedText = playfair.encode(lines[1])
+        val encodedText = playfair.encode(plainText)
         val decodedText = playfair.decode(encodedText)
 
         val output = buildString {
             appendln("Playfair table:")
             appendln(playfair.tableToString())
-            appendln("Encoded text: $encodedText")
-            appendln("Decoded text: $decodedText")
+            appendln("Encoded text: ${encodedText.spaceEverySecondLetter()}")
+            appendln("Decoded text: ${decodedText.spaceEverySecondLetter()}")
         }
 
         outputFile.writeText(output)
     }
 }
+
+fun String.spaceEverySecondLetter() = this.chunked(2).joinToString(" ")
