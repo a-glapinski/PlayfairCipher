@@ -36,6 +36,9 @@ object Menu {
 
         println("\nEncoded text:\n${encodedText.spaceEverySecondLetter()}")
         println("\nDecoded text:\n${decodedText.spaceEverySecondLetter()}")
+
+        println("\nPress Enter to continue...")
+        readLine()!!
     }
 
     private fun fileIo() {

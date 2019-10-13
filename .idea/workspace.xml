@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a41cac61-eaa2-4d18-97b9-6561496a6644" name="Default Changelist" comment="">
+    <list default="true" id="a41cac61-eaa2-4d18-97b9-6561496a6644" name="Default Changelist" comment="Improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Menu.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +79,8 @@
       <workItem from="1570884369602" duration="21400000" />
       <workItem from="1570913296343" duration="2036000" />
       <workItem from="1570915408869" duration="1243000" />
-      <workItem from="1570957193792" duration="3415000" />
+      <workItem from="1570957193792" duration="4530000" />
+      <workItem from="1570963768382" duration="1048000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <created>1570915531461</created>
@@ -89,7 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570915531461</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improvements">
+      <created>1570961461528</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570961461528</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Improve menu">
+      <created>1570964013522</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570964013522</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+    <MESSAGE value="Improvements" />
+    <MESSAGE value="Improve menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve menu" />
   </component>
 </project>
