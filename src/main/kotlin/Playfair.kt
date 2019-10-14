@@ -1,6 +1,6 @@
 class Playfair(keyword: String) {
     companion object {
-        const val REGEX_PATTERN = "[A-Za-z0-9 _.,!\"'$&;:?@-]*"
+        const val REGEX_PATTERN = "[A-Za-z _.,!\"'$&;:?@-]*"
 
         val alphabet = ('A'..'Z') - 'J'
 
