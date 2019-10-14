@@ -15,8 +15,8 @@ class Playfair(keyword: String) {
         }
     }
 
-    private val table: List<List<Char>> by lazy { populateTable() }
     private val formattedKeyword = keyword.playfairFormat()
+    private val table: List<List<Char>> = populateTable()
 
     fun encode(plainText: String): String {
         require(plainText.matches(Regex(REGEX_PATTERN))) {
