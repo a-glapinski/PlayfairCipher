@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a41cac61-eaa2-4d18-97b9-6561496a6644" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Menu.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProjectId" id="1S6W8aqcO449avG3ofxkilUDJYn" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -82,7 +86,8 @@
       <workItem from="1570915408869" duration="1243000" />
       <workItem from="1570957193792" duration="4530000" />
       <workItem from="1570963768382" duration="1977000" />
-      <workItem from="1570980760910" duration="238000" />
+      <workItem from="1570980760910" duration="528000" />
+      <workItem from="1571000361898" duration="653000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <created>1570915531461</created>
@@ -112,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570966048040</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="File IO fix">
+      <created>1570981154073</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570981154073</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +147,7 @@
     <MESSAGE value="Fixes" />
     <MESSAGE value="Improve menu" />
     <MESSAGE value="Improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improvements" />
+    <MESSAGE value="File IO fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="File IO fix" />
   </component>
 </project>
