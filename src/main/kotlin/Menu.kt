@@ -18,7 +18,7 @@ object Menu {
             1 -> consoleIo()
             2 -> fileIo()
             3 -> return
-            else -> println("Invalid option\n")
+            else -> println("Invalid option.\n")
         }
 
         init()
@@ -47,7 +47,7 @@ object Menu {
             check(inputFile.exists()) { "Input file doesn't exist." }
             check(outputFile.exists()) { "Output file doesn't exist." }
         } catch (exception: IllegalStateException) {
-            println("ERROR: Make sure files: 'input.txt' and 'output.txt' exist.\n")
+            println("ERROR: Make sure files: 'input.txt' and 'output.txt' exist in the same directory as executable file.\n")
             init()
         }
 
