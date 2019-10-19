@@ -1,12 +1,15 @@
 import java.io.File
+import java.lang.IllegalStateException
+
+private const val KEYWORD = "MANCHESTER"
 
 object Menu {
     tailrec fun init() {
         println(
             """
             |Choose option:
-            | 1. Read from/print to console
-            | 2. Read from/save to file
+            | 1. Read from console
+            | 2. Read from file
             | 3. Exit program
         """.trimMargin()
         )
@@ -22,48 +25,42 @@ object Menu {
     }
 
     private fun consoleIo() {
-        println("\nEnter keyword:")
-        val keyword = readLine()!!
-        val playfair = Playfair(keyword)
-        println("\nPlayfair table:")
-        print(playfair.tableToString())
+        val playfair = Playfair(KEYWORD)
 
         println("\nEnter plaintext:")
         val plainText = readLine()!!
-
         val encodedText = playfair.encode(plainText)
-        val decodedText = playfair.decode(encodedText)
 
-        println("\nEncoded text:\n${encodedText.spaceEverySecondLetter()}")
-        println("\nDecoded text:\n${decodedText.spaceEverySecondLetter()}")
+        println("\nEncoded text:\n$encodedText")
 
         println("\nPress Enter to continue...")
         readLine()!!
     }
 
     private fun fileIo() {
+        val playfair = Playfair(KEYWORD)
+
         val inputFile = File("input.txt")
         val outputFile = File("output.txt")
-        check(inputFile.exists()) { "Input file doesn't exist." }
-        check(outputFile.exists()) { "Output file doesn't exist." }
 
-        val keyword = inputFile.readLines().getOrElse(0) { "" }
-        val plainText = inputFile.readLines().getOrElse(1) { "" }
-        val playfair = Playfair(keyword)
-
-        val encodedText = playfair.encode(plainText)
-        val decodedText = playfair.decode(encodedText)
-
-        val output = buildString {
-            appendln("Playfair table:")
-            appendln(playfair.tableToString())
-            appendln("Encoded text: ${encodedText.spaceEverySecondLetter()}")
-            appendln("Decoded text: ${decodedText.spaceEverySecondLetter()}")
+        try {
+            check(inputFile.exists()) { "Input file doesn't exist." }
+            check(outputFile.exists()) { "Output file doesn't exist." }
+        } catch (exception: IllegalStateException) {
+            println("ERROR: Make sure files: 'input.txt' and 'output.txt' exist.\n")
+            init()
         }
 
-        outputFile.writeText(output)
+        val plainText = inputFile.readLines()
+        val encodedText = buildString {
+            for (line in plainText) {
+                appendln(playfair.encode(line))
+            }
+        }
+
+        outputFile.writeText(encodedText)
         println("\nOutput was saved to file.\n")
     }
 }
 
-fun String.spaceEverySecondLetter() = this.chunked(2).joinToString(" ")
+// fun String.spaceEverySecondLetter() = this.chunked(2).joinToString(" ")

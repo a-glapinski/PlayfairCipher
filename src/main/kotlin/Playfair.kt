@@ -19,10 +19,6 @@ class Playfair(keyword: String) {
     private val table: List<List<Char>> = populateTable()
 
     fun encode(plainText: String): String {
-        require(plainText.matches(Regex(REGEX_PATTERN))) {
-            "Plaintext must consist of letters A-Z and/or special characters."
-        }
-
         return formatAndSplitToPairs(plainText).fold("") { acc: String, (first: Char, second: Char) ->
             val (row1, col1) = indexOfChar(first)
             val (row2, col2) = indexOfChar(second)
