@@ -31,10 +31,10 @@ object Menu {
         val plainText = readLine()!!
         val encodedText = playfair.encode(plainText)
 
-        println("\nEncoded text:\n$encodedText")
+        println("\nEncoded text:\n$encodedText\n")
 
-        println("\nPress Enter to continue...")
-        readLine()!!
+//        println("\nPress Enter to continue...")
+//        readLine()!!
     }
 
     private fun fileIo() {
@@ -48,15 +48,11 @@ object Menu {
             check(outputFile.exists()) { "Output file doesn't exist." }
         } catch (exception: IllegalStateException) {
             println("ERROR: Make sure files: 'input.txt' and 'output.txt' exist in the same directory as executable file.\n")
-            init()
+            return
         }
 
         val plainText = inputFile.readLines()
-        val encodedText = buildString {
-            for (line in plainText) {
-                appendln(playfair.encode(line))
-            }
-        }
+        val encodedText = playfair.encode(plainText.joinToString(""))
 
         outputFile.writeText(encodedText)
         println("\nOutput was saved to file.\n")
