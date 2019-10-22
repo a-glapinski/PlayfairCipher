@@ -66,8 +66,8 @@ class Playfair(keyword: String) {
     private fun populateTable(): List<List<Char>> {
         val distinctKeywordLetters = formattedKeyword.toCharArray().distinct()
         val remainingLetters = alphabet - distinctKeywordLetters
-        val remainingAfterLast = remainingLetters - alphabet.filter { it < formattedKeyword.lastOrNull() ?: 'A' }
-        val remainingBeforeLast = remainingLetters - alphabet.filter { it > formattedKeyword.lastOrNull() ?: 'Z' }
+        val remainingAfterLast = remainingLetters - alphabet.filter { it < distinctKeywordLetters.lastOrNull() ?: 'A' }
+        val remainingBeforeLast = remainingLetters - alphabet.filter { it > distinctKeywordLetters.lastOrNull() ?: 'Z' }
         val letters = distinctKeywordLetters + remainingAfterLast + remainingBeforeLast
 
         return letters.chunked(5)
